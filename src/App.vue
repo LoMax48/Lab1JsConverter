@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ConverterComponent name="Конвертер миль в километры" />
+    <ConverterComponent />
   </div>
 </template>
 
