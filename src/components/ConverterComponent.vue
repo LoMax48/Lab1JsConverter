@@ -1,7 +1,6 @@
 <template>
     <div class="container">
         <h1>Конвертер миль в километры</h1>
-        <h2>и обратно))</h2>
         <div class="input-group mb-3 text-center">
             <input type="number" class="form-control" placeholder="Мили" v-model="miles">
             <span class="input-group-text">⇄</span>
@@ -11,6 +10,8 @@
 </template>
 
 <script>
+const coeff = 1.609;
+
 export default {
     name: "ConverterComponent",
     data() {
@@ -22,16 +23,12 @@ export default {
     watch: {
         kilometers: function(val) {
             this.kilometers = val;
-            this.miles = this.kilometers / 1.609;
+            this.miles = this.kilometers / coeff;
         },
         miles: function(val) {
             this.miles = val;
-            this.kilometers = this.miles * 1.609;
+            this.kilometers = this.miles * coeff;
         }
     }
 }
 </script>
-
-<style>
-
-</style>
